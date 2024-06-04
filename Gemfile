@@ -30,7 +30,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+ gem "image_processing", "~> 1.2"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
 # gem "rack-cors"
@@ -45,3 +45,17 @@ group :development do
   # gem "spring"
 end
 
+gem 'will_paginate'
+# Gemfile
+gem 'devise'
+# Gemfile
+gem 'rack-cors', require: 'rack/cors'
+
+
+
+
+gem "dotenv-rails", "~> 2.8"
+# gem "devise", "~> 4.9"
+gem "devise-jwt", "~> 0.11.0"
+
+gem "jsonapi-serializer", "~> 2.2"

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tourist_id: 1
+  expert_id: 1
+  rating: 1
+  comments: MyText
+
+two:
+  tourist_id: 1
+  expert_id: 1
+  rating: 1
+  comments: MyText
