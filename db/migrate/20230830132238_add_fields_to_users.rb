@@ -12,5 +12,6 @@ class AddFieldsToUsers < ActiveRecord::Migration[7.0]
     add_column :users, :bio, :string
     add_column :users, :preferences, :string
     add_column :users, :interests, :string
+    add_column :users, :category, :string
   end
 end

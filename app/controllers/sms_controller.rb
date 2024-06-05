@@ -1,33 +1,36 @@
+require 'AfricasTalking'
 
- class SmsController < ApplicationController
-  before_action :authenticate_user!
+class SmsController < ApplicationController
+  # before_action :authenticate_user!
 
+  def send_sms
+    # Set your app credentials
+    username = "culture"
+    apikey = "bfba4e7a4d5d4ec5fe689813712b29dc6fbf4392e90f5c02361137ce0bea66b7"
 
-  # def send
-  #   # Set your app credentials
-  #   username = "Opondo"
-  #   apikey = "7287e8096c064d15988f445dc29c1e1731529b293efaff82cb4e094f63d508ca"
+    # Create an instance of AfricasTalking::Initialize
+    africas_talking_client = AfricasTalking::Initialize.new(username, apikey)
 
-  #   AT = AfricasTalking::Initialize.new(username, apikey)
-  #   sms = AT.sms
-  #   message = "Thank you for using Africas Talking your items will be ready in 1 hour"
+    # Get the SMS service
+    sms = africas_talking_client.sms
 
-  #   options = {
-  #     "to" => to,
-  #     "message" => message
-  #   }
+    message = "Thank you for using Africas Talking. Your items will be ready in 1 hour"
 
-  #   begin
-  #     reports = sms.send(options)gem 'sinatra'
-  #     # gem 'africastalking'
+    options = {
+      "to" => to,
+      "message" => message
+    }
 
-  #     reports.each do |report|
-  #       puts report.to_yaml
-  #     end
+    begin
+      reports = sms.send(options)
 
-  #     render json: { success: true, message: 'SMS sent successfully' }
-  #   rescue AfricasTalking::AfricasTalkingException => ex
-  #     render json: { success: false, message: "Failed to send SMS. Error: #{ex.message}" }
-  #   end
-  # end
+      reports.each do |report|
+        puts report.to_yaml
+      end
+
+      render json: { success: true, message: 'SMS sent successfully' }
+    rescue AfricasTalking::AfricasTalkingException => ex
+      render json: { success: false, message: "Failed to send SMS. Error: #{ex.message}" }
+    end
+  end
 end

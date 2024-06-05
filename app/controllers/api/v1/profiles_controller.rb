@@ -19,7 +19,7 @@ class Api::V1::ProfilesController < ApplicationController
 
   def index
     page = params[:page] || 1
-    per_page = params[:per_page] || 10
+    per_page = params[:per_page] || 100
 
     @users = User.paginate(page: page, per_page: per_page)
     render json: { data: UserSerializer.new(@users).serializable_hash[:data].map { |user| user[:attributes] } }

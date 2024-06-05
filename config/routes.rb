@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # get 'sms/send'
   devise_for :users, controllers: {
                        sessions: "users/sessions",
                        registrations: "users/registrations",
@@ -22,6 +23,6 @@ Rails.application.routes.draw do
     resources :rankings, only: [:index]
   end
 
-  # post '/send_sms', to: 'sms#send'
+  post '/send_sms', to: 'sms#send'
   # match '*path', via: :all, to: -> (env) { [404, {}, ['']] }
 end

@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.3.1"
+ruby "3.3.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.3"
@@ -59,3 +59,7 @@ gem "dotenv-rails", "~> 2.8"
 gem "devise-jwt", "~> 0.11.0"
 
 gem "jsonapi-serializer", "~> 2.2"
+# gem 'africastalking'
+# gem 'sinatra'
+# gem 'Africas_Talking'
+

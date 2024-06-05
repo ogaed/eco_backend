@@ -146,6 +146,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_04_122239) do
     t.string "bio"
     t.string "preferences"
     t.string "interests"
+    t.string "category"
     t.float "average_rating"
     t.integer "number_of_ratings"
     t.index ["email"], name: "index_users_on_email", unique: true
