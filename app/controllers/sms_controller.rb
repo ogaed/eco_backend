@@ -1,23 +1,21 @@
+
+require 'yaml'
+require 'json'
+
 require 'AfricasTalking'
 
 class SmsController < ApplicationController
-  # before_action :authenticate_user!
-
   def send_sms
-    # Set your app credentials
     username = "culture"
     apikey = "bfba4e7a4d5d4ec5fe689813712b29dc6fbf4392e90f5c02361137ce0bea66b7"
 
-    # Create an instance of AfricasTalking::Initialize
     africas_talking_client = AfricasTalking::Initialize.new(username, apikey)
-
-    # Get the SMS service
     sms = africas_talking_client.sms
 
-    message = "Thank you for using Africas Talking. Your items will be ready in 1 hour"
+    message = "Thank you for using Nairobi city county tourism and culture system. Welcome agaibn"
 
     options = {
-      "to" => to,
+      "to" => params[:to],
       "message" => message
     }
 
