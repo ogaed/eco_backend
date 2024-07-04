@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   # get current user
   get "/current_user", to: "currents#index"
+  resources :carbon_footprints, only: [:index, :create]
+  resources :waste_data, only: [:index, :create]
+  resources :educational_contents, only: [:index, :create]
 
   namespace :api do
     namespace :v1 do

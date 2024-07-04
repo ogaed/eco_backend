@@ -27,13 +27,7 @@ class User < ApplicationRecord
   validates :location, presence: true
   validates :national_id, presence: true, uniqueness: true
   validates :phone_number, presence: true, uniqueness: true
-  validates  :expertise, presence: true, allow_nil: true
-  validates  :languages, presence: true, allow_nil: true
-  validates  :experience, presence: true, allow_nil: true
-  validates :bio, presence: true, allow_nil: true
-  validates :preferences, presence: true, allow_nil: true
-  validates  :interests, presence: true, allow_nil: true
-  validates  :category, presence: true, allow_nil: true
+ 
 
 
   # Callbacks
